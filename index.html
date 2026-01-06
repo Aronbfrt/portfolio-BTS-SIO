@@ -8,20 +8,150 @@
 </head>
 <body>
 
-<nav>
-    <ul>
-        <li><a href="#nom">BEAUFORT Aron</a></li>
-        <li><a href="#alternance">Alternance</a></li>
-        <li><a href="#projets">Projets</a></li>
-        <li><a href="#cv">CV</a></li>
-        <li><a href="#competences">Compétences</a></li>
-    </ul>
-</nav>
+<<nav>
+        <div class="container">
+            <div class="logo">Votre Nom</div>
+            <ul id="navMenu">
+                <li><a href="#home">Accueil</a></li>
+                <li><a href="#skills">Compétences</a></li>
+                <li><a href="#projects">Projets</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
 
-<header>
-    <h1 id="nom">BEAUFORT Aron</h1>
-    <p>Étudiant en informatique à la recherche d'une alternance</p>
-</header>
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Développeur en Formation</h1>
+            <p class="subtitle">BTS SIO - Option SLAM</p>
+            <p>Passionné par le développement d'applications et la création de solutions logicielles innovantes. Spécialisé dans les technologies web et la gestion de bases de données.</p>
+            <a href="#projects" class="cta-button">Voir mes projets</a>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2 class="section-title">Compétences</h2>
+        <div class="skills-container">
+            <div class="skill-card">
+                <h3>Développement Web</h3>
+                <p>Maîtrise des technologies front-end et back-end pour créer des applications web performantes et responsives.</p>
+                <div class="tech-tags">
+                    <span class="tag">HTML/CSS</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">PHP</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <h3>Bases de données</h3>
+                <p>Conception et gestion de bases de données relationnelles avec optimisation des requêtes.</p>
+                <div class="tech-tags">
+                    <span class="tag">MySQL</span>
+                    <span class="tag">SQL Server</span>
+                    <span class="tag">PostgreSQL</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <h3>Programmation</h3>
+                <p>Développement d'applications en utilisant des langages orientés objet et structurés.</p>
+                <div class="tech-tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">Java</span>
+                    <span class="tag">C#</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <h3>Outils & Méthodologies</h3>
+                <p>Utilisation d'outils professionnels pour le versioning et la gestion de projets.</p>
+                <div class="tech-tags">
+                    <span class="tag">Git</span>
+                    <span class="tag">Agile</span>
+                    <span class="tag">VS Code</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2 class="section-title">Projets Réalisés</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-image">01</div>
+                <div class="project-content">
+                    <h3>Application de Gestion</h3>
+                    <p>Développement d'une application complète pour la gestion des stocks et des commandes avec interface d'administration. Intégration d'un système d'authentification sécurisé et de tableaux de bord dynamiques.</p>
+                    <div class="tech-tags">
+                        <span class="tag">PHP</span>
+                        <span class="tag">MySQL</span>
+                        <span class="tag">Bootstrap</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">02</div>
+                <div class="project-content">
+                    <h3>Plateforme Web Interactive</h3>
+                    <p>Création d'un site web responsive avec système d'inscription, gestion d'utilisateurs et interface d'administration. Architecture MVC et API REST pour les échanges de données.</p>
+                    <div class="tech-tags">
+                        <span class="tag">HTML/CSS</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">PHP</span>
+                        <span class="tag">Ajax</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">03</div>
+                <div class="project-content">
+                    <h3>Script d'Automatisation</h3>
+                    <p>Développement d'un programme Python pour l'automatisation de tâches répétitives et le traitement de données volumineuses. Génération de rapports et statistiques automatisées.</p>
+                    <div class="tech-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">SQLite</span>
+                        <span class="tag">Pandas</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="section-title">Contact</h2>
+        <div class="contact-grid">
+            <div class="contact-card">
+                <div class="contact-icon">📧</div>
+                <h3>Email</h3>
+                <a href="mailto:votre.email@exemple.fr">votre.email@exemple.fr</a>
+            </div>
+            <div class="contact-card">
+                <div class="contact-icon">💼</div>
+                <h3>LinkedIn</h3>
+                <a href="#">linkedin.com/in/votre-profil</a>
+            </div>
+            <div class="contact-card">
+                <div class="contact-icon">💻</div>
+                <h3>GitHub</h3>
+                <a href="#">github.com/votre-github</a>
+            </div>
+            <div class="contact-card">
+                <div class="contact-icon">📱</div>
+                <h3>Téléphone</h3>
+                <a href="tel:+33600000000">06 XX XX XX XX</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 - Tous droits réservés</p>
+    </footer>
+<script src="js/script.js"></script>
 
 </body>
 
