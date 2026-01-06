@@ -1,35 +1,65 @@
- // Navigation fluide
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                    // Fermer le menu mobile après clic
-                    document.getElementById('navMenu').classList.remove('active');
-                }
-            });
-        });
+// ===============================
+// Smooth Scroll pour les liens
+// ===============================
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href');
 
-        // Menu mobile
-        function toggleMenu() {
-            document.getElementById('navMenu').classList.toggle('active');
-        }
-
-        // Navbar au scroll
-        let lastScroll = 0;
-        window.addEventListener('scroll', () => {
-            const nav = document.querySelector('nav');
-            const currentScroll = window.pageYOffset;
-            
-            if (currentScroll > 100) {
-                nav.style.padding = '15px 0';
-            } else {
-                nav.style.padding = '20px 0';
+        // Si c'est un ancre (#)
+        if (targetId.startsWith("#")) {
+            e.preventDefault(); // bloque le jump instantané
+            const targetSection = document.querySelector(targetId);
+            if (targetSection) {
+                window.scrollTo({
+                    top: targetSection.offsetTop - 70, // prend en compte navbar
+                    behavior: "smooth"
+                });
             }
-            
-            lastScroll = currentScroll;
-        });
+        }
+    });
+});
+
+// ===============================
+// Animation au scroll pour les cards
+// ===============================
+const cards = document.querySelectorAll('.skill-card, .project-card .card');
+
+const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.2
+};
+
+const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting) {
+            entry.target.classList.add('animate');
+            observer.unobserve(entry.target);
+        }
+    });
+}, observerOptions);
+
+cards.forEach(card => {
+    observer.observe(card);
+});
+
+// ===============================
+// Ajouter une classe .animate pour l'effet
+// ===============================
+
+const backToTopBtn = document.getElementById('backToTop');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 100) { // réduit le seuil à 100px
+        backToTopBtn.classList.add('show');
+    } else {
+        backToTopBtn.classList.remove('show');
+    }
+});
+
+backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
