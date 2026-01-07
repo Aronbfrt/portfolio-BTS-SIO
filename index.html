@@ -358,6 +358,7 @@
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 40px;
             margin-bottom: 40px;
+            justify-items: center;
         }
 
         .footer-section h4 {
@@ -537,7 +538,7 @@
         <div class="hero-content">
             <h1 class="hero-title">Aron Beaufort</h1>
             <p class="hero-subtitle">
-                <span class="typing-text" id="typingText">Développeur Full Stack</span>
+                <span class="typing-text" id="typingText">Développeur Web en alternance</span>
             </p>
             <div class="cta-buttons">
                 <a href="projects.html" class="cta-button">Voir mes projets</a>
@@ -578,50 +579,48 @@
     <!-- STATS SECTION -->
     <section class="stats-section">
         <div class="container">
-            <div class="row">
-                <div class="col-md-3 col-6">
+            <div class="row justify-content-center text-center">
+                <div class="col-md-4 col-6">
                     <div class="stat-card" data-delay="0">
-                        <div class="stat-number" data-target="15">0</div>
+                        <div class="stat-number" data-target="1">0</div>
                         <div class="stat-label">Projets réalisés</div>
                     </div>
                 </div>
-                <div class="col-md-3 col-6">
+                <div class="col-md-4 col-6">
                     <div class="stat-card" data-delay="100">
-                        <div class="stat-number" data-target="3">0</div>
-                        <div class="stat-label">Années d'expérience</div>
+                        <div class="stat-number" data-target="2">0</div>
+                        <div class="stat-label">Projets en cours</div>
                     </div>
                 </div>
-                <div class="col-md-3 col-6">
+                <div class="col-md-4 col-6">
                     <div class="stat-card" data-delay="200">
-                        <div class="stat-number" data-target="12">0</div>
-                        <div class="stat-label">Technologies maîtrisées</div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-6">
-                    <div class="stat-card" data-delay="300">
-                        <div class="stat-number" data-target="100">0</div>
-                        <div class="stat-label">% de satisfaction</div>
+                        <div class="stat-number" data-target="4">0</div>
+                        <div class="stat-label">Technologies en cours d'apprentissage</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    </body>
 
     <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
+
+                <div class="footer-section text-center text-md-start">
                     <h4>Aron Beaufort</h4>
-                    <p style="color: #94a3b8;">Développeur Full Stack passionné par la création d'expériences web modernes et performantes.</p>
-                    <div class="social-links">
+                    <p style="color: #94a3b8;">
+                        Développeur Web en alternance passionné par la création de site et d'applications web.
+                        J'aime relever des défis techniques.
+                    </p>
+                    <div class="social-links justify-content-center justify-content-md-start">
                         <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
                         <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
-                <div class="footer-section">
+
+                <div class="footer-section text-center text-md-start">
                     <h4>Navigation</h4>
                     <ul class="footer-links">
                         <li><a href="index.html">Accueil</a></li>
@@ -631,29 +630,31 @@
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
-                <div class="footer-section">
-                    <h4>Services</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">Développement Web</a></li>
-                        <li><a href="#">Design UI/UX</a></li>
-                        <li><a href="#">Applications React</a></li>
-                        <li><a href="#">Consulting</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
+
+                <div class="footer-section text-center text-md-start">
                     <h4>Contact</h4>
                     <ul class="footer-links">
-                        <li><a href="mailto:contact@aronbeaufort.com"><i class="fas fa-envelope"></i> contact@aronbeaufort.com</a></li>
-                        <li><a href="tel:+33123456789"><i class="fas fa-phone"></i> +33 1 23 45 67 89</a></li>
-                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Lyon, France</a></li>
+                        <li>
+                            <a href="mailto:beaufortaron0@gmail.com">
+                                <i class="fas fa-envelope"></i> beaufortaron0@gmail.com
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-map-marker-alt"></i> Lyon, France
+                            </a>
+                        </li>
                     </ul>
                 </div>
+
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Aron Beaufort. Tous droits réservés. Fait avec <i class="fas fa-heart" style="color: #ef4444;"></i></p>
+
+            <div class="footer-bottom text-center">
+                <p>&copy; 2026 Aron Beaufort. Tous droits réservés.</p>
             </div>
         </div>
     </footer>
+
 
     <!-- BACK TO TOP -->
     <button id="backToTop">
@@ -702,7 +703,7 @@
         createParticles();
 
         // Typing effect
-        const texts = ['Développeur Full Stack', 'Créateur d\'expériences web', 'Passionné de code', 'Designer UI/UX'];
+        const texts = ['Développeur Web en alternance', 'Création de site personnel', 'Passionné de code'];
         let textIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
