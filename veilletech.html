@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veille Technologique - Aron Beaufort</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<style>
+    .veille-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px; /* espace entre texte et icône */
+    padding: 12px 22px;
+    background-color: #2563eb; /* bleu vif */
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 15px rgba(37, 99, 235, 0.3);
+}
+
+.veille-btn i {
+    transition: transform 0.3s ease;
+}
+
+.veille-btn:hover {
+    background-color: #1e40af; /* bleu foncé au survol */
+    color: #ffffff;
+    transform: translateY(-3px); /* léger soulèvement */
+    box-shadow: 0 10px 25px rgba(30, 64, 175, 0.4);
+}
+
+.veille-btn:hover i {
+    transform: translateX(5px);
+}
+</style>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar-custom">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <a class="navbar-brand" href="index.html">Aron Beaufort</a>
+
+                <div class="nav-links">
+                    <a class="nav-link-custom" href="index.html">Accueil</a>
+                    <a class="nav-link-custom" href="about.html">À propos</a>
+                    <a class="nav-link-custom" href="alternance.html">Alternance</a>
+                    <a class="nav-link-custom" href="projects.html">Projets</a>
+                    <a class="nav-link-custom" href="skills.html">Compétences</a>
+                    <a class="nav-link-custom" href="cv.html">CV</a>
+                    <a class="nav-link-custom" href="veilletech.html">Veille Technologique</a>
+                </div>
+
+                <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-nav" id="mobileNav">
+        <button class="mobile-close" onclick="toggleMobileMenu()">
+            <i class="fas fa-times"></i>
+        </button>
+        <a href="index.html">Accueil</a>
+        <a href="about.html">À propos</a>
+        <a href="alternance.html">Alternance</a>
+        <a href="projects.html">Projets</a>
+        <a href="skills.html">Compétences</a>
+        <a href="cv.html">CV</a>
+        <a href="veilletech.html">Veille Technologique</a>
+    </div>
+
+    <!-- HEADER -->
+    <header class="page-header">
+        <h1 class="page-title">Veille Technologique</h1>
+        <p class="page-subtitle">Cybersécurité & Intelligence Artificielle</p>
+    </header>
+
+    <!-- CONTENT -->
+    <section class="veilletech-content py-5">
+        <div class="container">
+
+            <!-- INTRO -->
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <p>
+                        Cette veille technologique présente des sujets clés du monde informatique,
+                        notamment la cybersécurité sous Linux et les avancées de l’intelligence
+                        artificielle dans le développement web et logiciel.
+                    </p>
+                </div>
+            </div>
+
+            <!-- ARTICLE CYBER LINUX -->
+            <div class="row align-items-center mb-5">
+                <div class="col-md-6">
+                    <img src="img/cyber.png" alt="Cybersécurité sous Linux" class="img-fluid rounded border">
+                </div>
+            
+            
+
+                <div class="col-md-6">
+                    <h3>La cybersécurité sous Linux</h3>
+                    <p>
+                        Linux est largement utilisé dans les serveurs et les systèmes critiques.
+                        Sa stabilité et son modèle open source en font une cible importante pour
+                        les attaques informatiques.
+                    </p>
+                    <p>
+                        La sécurisation d’un système Linux repose sur de bonnes pratiques telles que
+                        la gestion des droits utilisateurs, les mises à jour régulières et la
+                        surveillance des services actifs.
+                    </p>
+                    <a href="https://www.cybermalveillance.gouv.fr/tous-nos-contenus/actualites/securite-linux"
+                    target="_blank"
+                    class="veille-btn">
+                        Lire l’article
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- ARTICLE IA -->
+            <div class="row align-items-center mb-5 flex-md-row-reverse">
+                <div class="col-md-6">
+                    <img src="img/ia.jpg" alt="Intelligence artificielle" class="img-fluid rounded border">
+                </div>
+                <div class="col-md-6">
+                    <h3>L’intelligence artificielle aujourd’hui</h3>
+                    <p>
+                        L’intelligence artificielle connaît une croissance rapide et transforme
+                        de nombreux domaines, dont le développement web, la cybersécurité et
+                        l’analyse de données.
+                    </p>
+                    <p>
+                        Elle permet d’automatiser des tâches complexes, d’assister les développeurs
+                        et d’améliorer la prise de décision grâce à l’analyse intelligente
+                        des données.
+                    </p>
+                    <a href="https://www.ibm.com/fr-fr/topics/artificial-intelligence"
+                        target="_blank"
+                        class="veille-btn">
+                            Lire l’article
+                            <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+
+                <div class="footer-section text-center">
+                    <h4>Aron Beaufort</h4>
+                    <p style="color: #94a3b8;">
+                        Développeur Web en alternance passionné par la création de sites
+                        et d'applications web.
+                    </p>
+                    <div class="social-links justify-content-center">
+                        <a href="https://github.com/Aronbfrt" class="social-icon" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/aron-b-4709982a7/" class="social-icon" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-section text-center">
+                    <h4>Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="about.html">À propos</a></li>
+                        <li><a href="alternance.html">Alternance</a></li>
+                        <li><a href="projects.html">Projets</a></li>
+                        <li><a href="skills.html">Compétences</a></li>
+                        <li><a href="cv.html">CV</a></li>
+                        <li><a href="veilletech.html">Veille Technologique</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section text-center">
+                    <h4>Contact</h4>
+                    <ul class="footer-links">
+                        <li>
+                            <a href="mailto:beaufortaron0@gmail.com">
+                                <i class="fas fa-envelope"></i> beaufortaron0@gmail.com
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-map-marker-alt"></i> Lyon, France
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom text-center">
+                <p>&copy; 2026 Aron Beaufort. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
