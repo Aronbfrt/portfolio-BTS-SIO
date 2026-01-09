@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Aron Beaufort</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .cv-section {
+            padding: 80px 0;
+            background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+        }
+
+        .cv-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(30, 41, 59, 0.5);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            border-radius: 20px;
+            padding: 60px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .cv-header {
+            text-align: center;
+            padding-bottom: 40px;
+            border-bottom: 2px solid rgba(139, 92, 246, 0.3);
+            margin-bottom: 50px;
+        }
+
+        .cv-name {
+            font-size: 3rem;
+            font-weight: bold;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .cv-title {
+            font-size: 1.3rem;
+            color: #94a3b8;
+            margin-bottom: 20px;
+        }
+
+        .cv-contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .cv-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #94a3b8;
+        }
+
+        .cv-contact-item i {
+            color: var(--primary);
+        }
+
+        .cv-contact-item a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .cv-contact-item a:hover {
+            color: var(--primary);
+        }
+
+        .cv-section-block {
+            margin-bottom: 50px;
+        }
+
+        .cv-section-title {
+            font-size: 1.8rem;
+            color: var(--light);
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(139, 92, 246, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .cv-section-title i {
+            color: var(--primary);
+        }
+
+        .cv-experience-item,
+        .cv-education-item {
+            margin-bottom: 30px;
+            padding-left: 30px;
+            border-left: 3px solid rgba(139, 92, 246, 0.3);
+            position: relative;
+        }
+
+        .cv-experience-item::before,
+        .cv-education-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 5px;
+            width: 13px;
+            height: 13px;
+            background: var(--gradient);
+            border-radius: 50%;
+            border: 3px solid #1e293b;
+        }
+
+        .cv-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .cv-item-title {
+            font-size: 1.3rem;
+            color: var(--light);
+            font-weight: 600;
+        }
+
+        .cv-item-date {
+            background: rgba(139, 92, 246, 0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #a78bfa;
+        }
+
+        .cv-item-company {
+            font-size: 1.1rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .cv-item-description {
+            color: #94a3b8;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .cv-item-description ul {
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+
+        .cv-item-description li {
+            margin-bottom: 5px;
+        }
+
+        .cv-skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .cv-skill-category {
+            background: rgba(15, 23, 42, 0.5);
+            padding: 20px;
+            border-radius: 15px;
+            border: 1px solid rgba(139, 92, 246, 0.2);
+        }
+
+        .cv-skill-category h4 {
+            color: var(--light);
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cv-skill-category h4 i {
+            color: var(--primary);
+        }
+
+        .cv-skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .cv-skill-tag {
+            background: rgba(139, 92, 246, 0.2);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #a78bfa;
+            border: 1px solid rgba(139, 92, 246, 0.3);
+        }
+
+        .cv-download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 40px;
+            background: var(--gradient);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+            margin-top: 30px;
+        }
+
+        .cv-download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.5);
+            color: white;
+        }
+
+        .cv-languages {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .cv-language-item {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .cv-language-name {
+            color: var(--light);
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .cv-language-level {
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .cv-container {
+                padding: 30px 20px;
+            }
+
+            .cv-name {
+                font-size: 2rem;
+            }
+
+            .cv-title {
+                font-size: 1.1rem;
+            }
+
+            .cv-contact-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .cv-item-header {
+                flex-direction: column;
+            }
+
+            .cv-skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar-custom">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <a class="navbar-brand" href="index.html">BEAUFORT Aron</a>
+                
+                <div class="nav-links">
+                    <a class="nav-link-custom" href="index.html">Accueil</a>
+                    <a class="nav-link-custom" href="about.html">À propos</a>
+                    <a class="nav-link-custom" href="projects.html">Projets</a>
+                    <a class="nav-link-custom" href="skills.html">Compétences</a>
+                    <a class="nav-link-custom active" href="cv.html">CV</a>
+                </div>
+
+                <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-nav" id="mobileNav">
+        <button class="mobile-close" onclick="toggleMobileMenu()">
+            <i class="fas fa-times"></i>
+        </button>
+        <a href="index.html">Accueil</a>
+        <a href="about.html">À propos</a>
+        <a href="projects.html">Projets</a>
+        <a href="skills.html">Compétences</a>
+        <a href="cv.html">CV</a>
+    </div>
+
+    <header class="page-header">
+        <h1 class="page-title">Mon CV</h1>
+        <p class="page-subtitle">Parcours professionnel et compétences</p>
+    </header>
+
+    <section class="cv-section">
+        <div class="container">
+            <div class="cv-container">
+                <!-- En-tête du CV -->
+                <div class="cv-header">
+                    <h1 class="cv-name">Aron BEAUFORT</h1>
+                    <p class="cv-title">Développeur Web Full Stack en Alternance</p>
+                    <div class="cv-contact-info">
+                        <div class="cv-contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:beaufortaron0@gmail.com">beaufortaron0@gmail.com</a>
+                        </div>
+                        <div class="cv-contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Lyon, France</span>
+                        </div>
+                        <div class="cv-contact-item">
+                            <i class="fab fa-github"></i>
+                            <a href="https://github.com/Aronbfrt" target="_blank">GitHub</a>
+                        </div>
+                        <div class="cv-contact-item">
+                            <i class="fab fa-linkedin"></i>
+                            <a href="https://www.linkedin.com/in/aron-b-4709982a7/" target="_blank">Linkedin</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Profil -->
+                <div class="cv-section-block">
+                    <h2 class="cv-section-title">
+                        <i class="fas fa-user"></i>
+                        Profil
+                    </h2>
+                    <p class="cv-item-description">
+                        Actuellement en BTS SIO, option SLAM. Passionné par le développement web et logiciel, je suis en alternance pour mettre en pratique mes compétences en développement et programmation. Je suis déterminé et motivé, je veux progresser rapidement pour pouvoir participer à vos projets.
+                    </p>
+                </div>
+
+                <!-- Expérience Professionnelle -->
+                <div class="cv-section-block">
+                    <h2 class="cv-section-title">
+                        <i class="fas fa-briefcase"></i>
+                        Expérience Professionnelle
+                    </h2>
+
+                    <div class="cv-experience-item">
+                        <div class="cv-item-header">
+                            <div>
+                                <h3 class="cv-item-title">Développeur Web - Alternance</h3>
+                                <p class="cv-item-company">Leadcall</p>
+                            </div>
+                            <span class="cv-item-date">Déc 2025 - Présent</span>
+                        </div>
+                        <div class="cv-item-description">
+                            <ul>
+                                <li>Création de pages web dynamiques avec HTML, CSS et JavaScript</li>
+                                <li>Création de pages web WP / Shopify</li>
+                                <li>Maintenance et mise à jour du site vitrine de l'entreprise</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="cv-experience-item">
+                        <div class="cv-item-header">
+                            <div>
+                                <h3 class="cv-item-title">Technicien support informatique - Stage</h3>
+                                <p class="cv-item-company">Mairie de Rillieux-la-Pape </p>
+                            </div>
+                            <span class="cv-item-date">  Novembre 2024 - Décembre 2024</span>
+                        </div>
+                        <div class="cv-item-description">
+                            <ul>
+                                <li>Gestion et configuration d’Active Directory. </li>
+                                <li>Déploiement de postes utilisateurs sous Windows. </li>
+                                <li>Participation au support technique des utilisateurs. </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formation -->
+                <div class="cv-section-block">
+                    <h2 class="cv-section-title">
+                        <i class="fas fa-graduation-cap"></i>
+                        Formation
+                    </h2>
+
+                    <div class="cv-education-item">
+                        <div class="cv-item-header">
+                            <div>
+                                <h3 class="cv-item-title">BTS SIO option SLAM</h3>
+                                <p class="cv-item-company">AFIP Formations</p>
+                            </div>
+                            <span class="cv-item-date">2025 - 2027</span>
+                        </div>
+                        <div class="cv-item-description">
+                            Formation en alternance axée sur le développement web et d'application.
+                        </div>
+                    </div>
+
+                    <div class="cv-education-item">
+                        <div class="cv-item-header">
+                            <div>
+                                <h3 class="cv-item-title">BAC Pro SN option RISC</h3>
+                                <p class="cv-item-company">Centre Scolaire Saint Charles</p>
+                            </div>
+                            <span class="cv-item-date">2024 - 2025</span>
+                        </div>
+                        <div class="cv-item-description">
+                            Option Solutions Logicielles et Applications Métiers (SLAM)
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Compétences Techniques -->
+                <div class="cv-section-block">
+                    <h2 class="cv-section-title">
+                        <i class="fas fa-code"></i>
+                        Compétences Techniques
+                    </h2>
+                    <div class="cv-skills-grid">
+                        <div class="cv-skill-category">
+                            <h4><i class="fas fa-laptop-code"></i> Front-End</h4>
+                            <div class="cv-skill-tags">
+                                <span class="cv-skill-tag">HTML5</span>
+                                <span class="cv-skill-tag">CSS3</span>
+                                <span class="cv-skill-tag">JavaScript</span>
+                                <span class="cv-skill-tag">React.js</span>
+                                <span class="cv-skill-tag">Tailwind CSS</span>
+                                <span class="cv-skill-tag">Bootstrap</span>
+                            </div>
+                        </div>
+
+                        <div class="cv-skill-category">
+                            <h4><i class="fas fa-server"></i> Back-End</h4>
+                            <div class="cv-skill-tags">
+                                <span class="cv-skill-tag">Node.js</span>
+                                <span class="cv-skill-tag">PHP</span>
+                                <span class="cv-skill-tag">MySQL</span>
+                            </div>
+                        </div>
+
+                        <div class="cv-skill-category">
+                            <h4><i class="fas fa-tools"></i> Outils & Autres</h4>
+                            <div class="cv-skill-tags">
+                                <span class="cv-skill-tag">Git</span>
+                                <span class="cv-skill-tag">GitHub</span>
+                                <span class="cv-skill-tag">VS Code</span>
+                                <span class="cv-skill-tag">Figma</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Langues -->
+                <div class="cv-section-block">
+                    <h2 class="cv-section-title">
+                        <i class="fas fa-language"></i>
+                        Langues
+                    </h2>
+                    <div class="cv-languages">
+                        <div class="cv-language-item">
+                            <div class="cv-language-name">🇫🇷 Français</div>
+                            <div class="cv-language-level">Langue maternelle</div>
+                        </div>
+                        <div class="cv-language-item">
+                            <div class="cv-language-name">🇬🇧 Anglais</div>
+                            <div class="cv-language-level">Niveau B2 - Intermédiaire avancé</div>
+                        </div>
+                    </div>
+                </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section text-center">
+                    <h4>Aron Beaufort</h4>
+                    <p style="color: #94a3b8;">
+                        Développeur Web en alternance passionné par la création de site et d'applications web.
+                        J'aime relever des défis techniques.
+                    </p>
+                    <div class="social-links justify-content-center">
+                        <a href="https://github.com/Aronbfrt" class="social-icon" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/aron-b-4709982a7/" class="social-icon" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section text-center">
+                    <h4>Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="about.html">À propos</a></li>
+                        <li><a href="projects.html">Projets</a></li>
+                        <li><a href="skills.html">Compétences</a></li>
+                        <li><a href="cv.html">CV</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section text-center">
+                    <h4>Contact</h4>
+                    <ul class="footer-links">
+                        <li>
+                            <a href="mailto:beaufortaron0@gmail.com">
+                                <i class="fas fa-envelope"></i> beaufortaron0@gmail.com
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-map-marker-alt"></i> Lyon, France
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom text-center">
+                <p>&copy; 2026 Aron Beaufort. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        function toggleMobileMenu() {
+            const mobileNav = document.getElementById('mobileNav');
+            mobileNav.classList.toggle('active');
+        }
+
+        document.addEventListener('click', (e) => {
+            const mobileNav = document.getElementById('mobileNav');
+            const menuToggle = document.querySelector('.mobile-menu-toggle');
+            
+            if (!mobileNav.contains(e.target) && !menuToggle.contains(e.target)) {
+                mobileNav.classList.remove('active');
+            }
+        });
+
+        const backToTop = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+        
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        const navbar = document.querySelector('.navbar-custom');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
